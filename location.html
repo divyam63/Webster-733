@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get User Location</title>
+</head>
+<body>
+
+  <button onclick="getUserLocation()">Get Location</button>
+  <p id="locationDisplay">Location: Not retrieved yet</p>
+
+  <script>
+    function getUserLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          
+          // Store location in local storage
+          localStorage.setItem('userLatitude', latitude);
+          localStorage.setItem('userLongitude', longitude);
+
+          // Display location
+          document.getElementById('locationDisplay').textContent = `Location: ${latitude}, ${longitude}`;
+          alert('Location saved!');
+        }, function(error) {
+          console.error("Error getting location:", error);
+          alert("Unable to retrieve location.");
+        });
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    // Retrieve location later
+    const savedLatitude = localStorage.getItem('userLatitude');
+    const savedLongitude = localStorage.getItem('userLongitude');
+    if (savedLatitude && savedLongitude) {
+      console.log(`Saved Location: Latitude ${savedLatitude}, Longitude ${savedLongitude}`);
+    }
+  </script>
+
+</body>
+</html>

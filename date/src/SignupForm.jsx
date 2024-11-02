@@ -17,6 +17,8 @@ function SignupForm() {
 
   const onSubmit = (data) => {
     console.log("Signup Data:", data);
+    history.push('/login');
+
   };
 
   return (
