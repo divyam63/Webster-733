@@ -1,20 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
-  
-  text-align:center;
-  
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;     
 }
 .App{
-  border: #282727;
-}
-:root{
-  background: #282727;  
-}
-.App{
+  background: #000;
+  color: #827f7f;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+  max-width: fit-content;
+  border: solid black 5px;
+  box-shadow: #383434 2px 3px;
+  border-radius: 24px;
   font-size: large;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  
+  gap: 5px;
+}
+:root{
+  background: #282727;  
+}
+
+input{
+       background-color: rgb(167, 116, 50); 
+       border-radius: 4px; 
+       margin-left: 6px;     
+}
+input[type="email"]:focus {
+  margin-left: 16px;     
+
+
+}
+h2{
+  font-size: x-large;
+
+  
 }

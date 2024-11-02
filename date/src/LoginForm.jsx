@@ -23,8 +23,8 @@ function LoginForm() {
       <h2>Login</h2>
       <div>
         <label>Email</label>
-        <input {...register("email")} />
-        {errors.email && <p className='text-red-900'>{errors.email.message}</p>}
+        <input {...register("email")} className='ml-7'/>
+        {errors.email && <p className='text-red-900 '>{errors.email.message}</p>}
       </div>
       <div>
         <label>Password</label>

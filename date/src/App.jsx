@@ -7,12 +7,15 @@ function App() {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="App">
-      <button onClick={() => setIsLogin(!isLogin)}>
+   
+      <div className="App">
+      
+      {isLogin ? <LoginForm /> : <SignupForm />}
+      <button onClick={() => setIsLogin(!isLogin)} className='border-solid border-2 border-orange-500 rounded-md'>
       {isLogin ? "Go to Signup" : "Go to Login"}
       </button>
-      {isLogin ? <LoginForm /> : <SignupForm />}
     </div>
+  
   );
 }
 

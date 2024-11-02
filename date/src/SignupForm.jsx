@@ -28,9 +28,9 @@ function SignupForm() {
         <input {...register("username")} />
         {errors.username && <p className='text-red-900'>{errors.username.message}</p>}
       </div>
-      <div>
+      <div className=''>
         <label>Email</label>
-        <input {...register("email")} />
+        <input {...register("email")} className='ml-10'/>
         {errors.email && <p className='text-red-900'>{errors.email.message}</p>}
       </div>
       <div>
